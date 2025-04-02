@@ -6,9 +6,10 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite" // Use "postgresql" if migrating to PostgreSQL
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
 
 model Workflow {
   id            String @id @default(uuid())
