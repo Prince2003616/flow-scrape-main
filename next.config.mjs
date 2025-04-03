@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone", // Ensure it's optimized for serverless
+  output: "standalone", // Ensure it's optimized for Vercel
   experimental: {
-    appDir: true, // If using the App Router
+    appDir: true,
   },
   async headers() {
     return [
       {
-        source: "/api/:path*", // Apply to all API routes
+        source: "/api/:path*",
         headers: [{ key: "Cache-Control", value: "no-store" }],
       },
     ];
